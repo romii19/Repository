@@ -6,7 +6,7 @@ function login(user, pass){
         alert("Debe rellenar los datos para contiuar");
     }else{
         
-        window.location="index.html"
+        window.location="home.html"
     }
 }
 document.addEventListener("DOMContentLoaded", function(e){
