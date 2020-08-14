@@ -35,8 +35,8 @@ function showProductsList(array)  {
     for(let i = 0; i < array.length; i++){
         let category = array[i];
         
-        if(((minCost == undefined) || (minCost != undefined && parseInt))
-
+        if(((minCost == undefined) || (minCost != undefined && parseInt(product.COST))))
+        if((maxCost == undefined) || (maxCost != undefined && parseInt(product.COST)))
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
             <div class="row">

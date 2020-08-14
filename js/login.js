@@ -5,12 +5,12 @@ function login(user, pass){
     if(user.trim()==="" || pass.trim()===""){
         alert("Debe rellenar los datos para contiuar");
     }else{
-        
-        window.location="home.html"
+      
+        location.href="home.html"
     }
 }
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
-localStorage.setItem("usuario", user.trim());
+  localStorage.setItem("usuario", user.trim());
         localStorage.setItem("contraseña", pass.trim());
