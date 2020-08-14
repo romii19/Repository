@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
+
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <style>
-html, body{
+  html, body{
  margin: 100px;
  height: 100px;
  background-image: url(img/login.png);
@@ -70,18 +71,19 @@ h1{
   font-family: Arial, Helvetica, sans-serif;
   margin: 45px;
 }
-</style>
+  </style>
 </head>
-<div>
-  <div class="alert-danger" role="alert">
-    <h1>Login</h1>
-    <img src="img/bxs-user.svg" alt="" class="icon">
-    <input type="text" id="user" placeholder="usuario" required><br>
-    <img src="img/bxs-key.svg" alt="" class="icon">
-  <input type="password" id="pass" placeholder="contraseña" required><br>
-  <button onclick="login(user.value, pass.value);">Iniciar Sesión</button>
-</div>
-</div>
+
+  <body class="text-center">
+    <div>
+      <h1>Login</h1>
+      <img src="img/bxs-user.svg" alt="" class="icon">
+      <input type="text" id="user" placeholder="usuario" required><br>
+      <img src="img/bxs-key.svg" alt="" class="icon">
+    <input type="password" id="pass" placeholder="contraseña" required><br>
+    <button onclick="login(user.value, pass.value);">Iniciar Sesión</button>
+  </div>
+  </div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
