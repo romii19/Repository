@@ -1,13 +1,46 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var categoriesArray = [];
+const ORDER_ASC_BY_COST = "$->$$";
+const ORDER_DESC_BY_COST = "$$->$";
+const ORDER_DESC_BY_R = "RR->R";
+var productsArray = [];
+var minCost = underFined;
+var maxCost = underFined;
+function sortProducts(criteria, array){
+    let result = [];
+    if (criteria === ORDER_ASC_BY_COST){
+        result = array.sort(function (a, b) {
+            if (a.cost < b.cost) { return -1; }
+            if (a.cost > b.cost) { return  1; }
+            return 0;
+    });
+} else if (criteria === ORDER_DESC_BY_COST) {
+    result = array.sort(function (a, b) {
+            if (a.cost < b.cost) { return -1; }
+            if (a.cost > b.cost) { return  1; }
+            return 0;
+        });
+} else if (criteria === ORDER_DESC_BY_R) {
+    result = array.sort(function (a, b) {
+            if (a.souldCount < b.souldCount) { return -1; }
+            if (a.soldCount > b.souldCount) { return  1; }
+            return 0;
+        });
+}
 
-function showCategoriesList(array){
+return result;
+
+}
+
+function showProductsList(array)  {
 
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
         let category = array[i];
+
+        if (((minCount == undefined) || (minCount != undefined && parseInt(category.soldCount) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.soldCount) <= maxCount))){
 
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
@@ -33,18 +66,28 @@ function showCategoriesList(array){
     }  
 }
 
+
+// function sortAndShowCategories(sortCriteria, categoriesArray){
+    // currentSortCriteria = sortCriteria;
+    // if(categoriesArray != sortCriteria){
+        // curretCategoriesArray = categoriesArray; 
+    // }
+    // currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
+
+    // showCategoriesList();
+// }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
+    getJSONData(LIST_URL).then(function(resultObj){
         if (resultObj.status === "ok")
-        {
-            categoriesArray = resultObj.data;
+        { 
+            productsArray = resultObj.data;
 
-            showProductsList = showCategoriesList;
+            prodectsArray = sortProducts(ORDER_ASC_BY_COST, productsArray);
             //Muestro las categorías ordenadas
-            showCategoriesList(categoriesArray);
+            showProductsList(productsArray);
         }
+    }
     });
-});

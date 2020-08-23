@@ -21,11 +21,61 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="userEmail" data-toggle="dropdown">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-menu" href="cart.html">Mi carrito<span class="ml-1 badge badge=danger badge=p"</a>
+          <a  class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="index.html">Cerrar Sesión</a>
+        </div>
+      </div>
       </div>
     </nav>
-    <div class="container p-5">
-      <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0; background-color: white; border: none; ">
-        <h4 class="alert-heading"><strong><center>Productos</center></strong></h4>
+    <main role="main" class="pb-5">
+      <div class="text-center p-4">
+    </main>
+        <h2 style="text-align: center;">Productos</h2>
+        <p class="lead" style="text-align: center;">Verás aquí todos los productos de la categoría <strong>Autos</strong></p>
+      </div>
+      <div class="conteiner">
+        <div class="row">
+          <div class="col text-right">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-light" id="sortCostDesc" title="Orden descendente por precio">
+                <input type="radio" name="options" autocomplete="off"><span><i class="fas fa-sort-amount-down mr-1"></i>$</span>
+              </label>
+              <label class="btn btn-light" id="sortCostAsc" title="Orden ascendente por precio">
+                <input type="radio" name="options" autocomplete="off"><span><i class="fas fa-sort-amount-up mr-1"></i>$</span>
+              </label>
+              <label class="btn btn-light pl-1" id="sortCountSoldDesc" title="Orden descendente por relevancia">
+                <input type="radio" name="options" autocomplete="off"><span><i class="fas fa-sort-amount-down mr-1"></i>R</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Cant.</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
       <div id="cat-list-container"></div>
     </div>
