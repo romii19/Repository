@@ -73,6 +73,25 @@ h1{
   font-weight: bold;
 }
   </style>
+  <script>
+    /*function guardar(){  
+   var user = document.getElementById("user").value;
+   var password = document.getElementById("password").value;
+((user=="Admin" || password=="Admin")|| (user=="guest" && password=="") ){
+ localStorage.setItem("usuario", user.trim());//setItem almacena el dato en la posición "usuario"
+ sessionStorage.setItem("usuario", user);
+ location.href="home.html";
+}else{
+ alert("incorrecto vuelva  a intentarlo");}
+}*/
+
+    // guardar datos
+    localStorage.setItem("usuario", "user");
+
+    // leer datos
+    var user = localStorage.getItem("user");
+
+  </script>
 </head>
 
   <body class="text-center">
@@ -81,10 +100,10 @@ h1{
       <img src="img/bxs-user.svg" alt="" class="icon">
       <input type="text" id="user" placeholder="usuario" required><br>
       <img src="img/bxs-key.svg" alt="" class="icon">
-    <input type="password" id="pass" placeholder="contraseña" required><br>
-    <button onclick="login(user.value, pass.value);">Iniciar Sesión</button>
+    <input type="password" id="password" placeholder="contraseña" required><br>
+    <button onclick="login();">Iniciar Sesión</button>
   </div>
-  </div>
+
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
