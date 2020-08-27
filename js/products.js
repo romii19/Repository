@@ -22,17 +22,17 @@ function sortProducts(criteria, array){
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_R){
-        result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productCount);
-            let bCount = parseInt(b.productCount);
+    result = array.sort(function(a, b) {
+        let asoldCount = parseInt(a.soldCount);
+        let bsoldCount = parseInt(b.soldCount);
 
-            if ( aCount > bCount ){ return -1; }
-            if ( aCount < bCount ){ return 1; }
-            return 0;
-        });
-    }
+        if ( asoldCount > bsoldCount ){ return -1; }
+        if ( asoldCount < bsoldCount ){ return 1; }
+        return 0;
+    });
+}
 
-    return result;
+return result;
 }
 
 function showProductsList(){
