@@ -1,23 +1,24 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
- function login(user, password){
-  var user = document.getElementById("user").value;
-    var password = document.getElementById("password").value;
-  if (user.trim()==="" || password.trim()===""){
-    alert("Debe rellenar los datos para contiuar");
-     
-   }else{
-   
- ((user=="Admin" || password=="Admin")|| (user=="guest" && password=="") )
-  localStorage.setItem("usuario", "user.trim()");//setItem almacena el dato en la posición "usuario"
-  sessionStorage.setItem("usuario", user);
+function login(dato, pass){  
+
+  if (dato.trim()==="" || pass.trim()===""){ //Chequea si el dato recibido no esté vacío. 
+  //El método trim elimina los espacios en blanco al inicio y al final.
+      alert("El dato está vacío");
+  }    else{
+  localStorage.setItem("usuario", dato.trim()); //setItem almacena el dato en la posición "usuario"
+  localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
+  sessionStorage.setItem("usuario", dato.trim());
+  alert (" Usuario : " + dato + " Password : " + pass ); 
+  
+ 
   location.href="home.html";
-   }
+  
+  //getItem obtiene el dato almacenado en la posición "usuario"
+ 
   }
-// function singIn(google){}
-
-
+}
 document.addEventListener("DOMContentLoaded", function(e){
 });
   
