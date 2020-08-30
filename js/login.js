@@ -8,9 +8,9 @@ function login(dato, pass){
       alert("El dato está vacío");
   }    else{
   localStorage.setItem("usuario", dato.trim()); //setItem almacena el dato en la posición "usuario"
-  localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
+  // localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
   sessionStorage.setItem("usuario", dato.trim());
-  alert (" Usuario : " + dato + " Password : " + pass ); 
+  alert (" Usuario : " + dato  ); 
   
  
   location.href="home.html";
