@@ -6,8 +6,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <!-- meta y script referenciados -->
+  <!-- meta y script referenciados para  googlearse-->
   <meta name="google-signin-client_id" content="35557240990-lpske2s116cprs1s80hvc2fu01j2ii11.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>  
+  <!-- para desgooglearse -->
+  <meta name="google-signin-client_id" content="117015505752-ehaoh6k1ng0dd3uitv48v5vbja250va2.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>  
   <title>eMercado - Todo lo que busques está aquí</title>
 
@@ -80,9 +83,9 @@ h1{
   </style>
               
 </head>
-  <body class="text-center">
-    <div>
-      <h1>Login</h1>
+  <body class="text-center"> 
+ 
+<h1>Login</h1>
     <!-- icono de usuario https://boxicons.com/-->
       <img src="img/bxs-user.svg" alt="" class="icon">
       <input type="text" id="user" placeholder="usuario" required><br>
@@ -92,25 +95,28 @@ h1{
     <button onclick="login(user.value, pass.value);">Iniciar Sesión</button> 
   <!-- botón de google -->
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <!-- botón salir -->
-  <a href="#" onclick="signOut();">Sign out</a>
   <!-- script de google -->
   <script>
 // función de logeo de google
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  var id_token = googleUser . getAuthResponse (). id_token ;
-  console.log(id_token);
+  localStorage.setItem("usuario", profile.getName());
+  location.href="home.html";
+  // console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  // console.log('Name: ' + profile.getName());
+  // console.log('Image URL: ' + profile.getImageUrl());
+  // console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  // var id_token = googleUser . getAuthResponse (). id_token ;
+  // console.log(id_token);
 }
 // función de deslogeo de google
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
+    localStorage.clear();
+     alert('Usuario desconectado');
+     location.href='index.html';
+    // console.log('User signed out.');
     });
   }
   </script>

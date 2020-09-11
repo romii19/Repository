@@ -13,6 +13,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -23,6 +24,7 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+<!--..................... botón desplegable............................................... -->
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown">
        <span id="user"></span>
@@ -42,16 +44,76 @@
       </div>
       </div>
     </nav>
-
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="container p-5" style="color: black;">
+<!-- ...................Título ...........................................................-->
+      <main role="main">
+        <div class="container mt-5">
+          <div class="text-center p-4">
+            <h2>Descripción del producto</h2>
+            <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+            <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+              seleccionado previamente, siempre se visualizará la presente: <strong>Chevrolet Onix Joy
+              </strong>.</p>
+          </div>
+<!--........... Información del prod.seleccionado............................................ -->
+<h3 id="categoryName"></h3>
+<hr class="my-3">
+<!-- ......Localización del precio.................... -->
+<dl>
+  <dt>Precio</dt>
+  <dd>
+    <p id="categoryCost"></p>
+  </dd>
+ <!-- ......Localización de la descripción............... ...... -->
+<dl>
+  <dt>Descripción</dt>
+  <dd>
+    <p id="categoryDescription"></p>
+  </dd>
+<!-- ......Localización de la cant.de productos................ -->
+  <dt>Cantidad de productos</dt>
+  <dd>
+    <p id="soldCount"></p>
+  </dd>
+<!-- ......Localización de la categoría........................ -->
+  <dt>Categoría</dt>
+  <dd>
+    <p id="category"></p>
+  </dd>
+<!-- ......Localización de imágenes ............................ -->
+  <dt>Imágenes</dt>
+  <dd>
+    <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
     </div>
-  </div>
-  <footer class="text-muted">
+  </dd>
+</dl>
+</div>
+</main>
+<!-- ...................................................................................... -->
+<hr class="my-3">
+<div class="cont" id="comentarios"></div>
+<h3 id="commentsuser"></h3>
+<!-- ........................................................................................ -->
+<style>
+  .cont{
+    width: 100%;
+ margin: 10px auto;
+ padding: 10px;
+ border: solid 2px #f60;
+ font: normal 13px arial, helvetica, sans-serif;
+  }
+</style>
+<!-- ....................................................................................... -->
+<style>
+  .checked{
+    color: orange;
+  }
+.des{
+   font-size: 20px;
+}
+</style>
+<!-- ............................................................... -->
+<footer class="text-muted">
     <div class="container">
       <p class="float-right">
         <a href="#">Volver arriba</a>
