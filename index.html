@@ -6,10 +6,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <!-- meta y script referenciados para  googlearse-->
+  <!--............ meta y script referenciados para  googlearse.............................-->
   <meta name="google-signin-client_id" content="35557240990-lpske2s116cprs1s80hvc2fu01j2ii11.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>  
-  <!-- para desgooglearse -->
+  <!--..................... para salir de google................................................................ -->
   <meta name="google-signin-client_id" content="117015505752-ehaoh6k1ng0dd3uitv48v5vbja250va2.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>  
   <title>eMercado - Todo lo que busques está aquí</title>
@@ -109,14 +109,14 @@ function onSignIn(googleUser) {
   // var id_token = googleUser . getAuthResponse (). id_token ;
   // console.log(id_token);
 }
-// función de deslogeo de google
+// función de salir de google
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-    localStorage.clear();
-     alert('Usuario desconectado');
-     location.href='index.html';
-    // console.log('User signed out.');
+    // localStorage.clear();
+    // alert('Usuario desconectado');
+    //  location.href='index.html';
+     console.log('User signed out.');
     });
   }
   </script>

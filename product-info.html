@@ -23,22 +23,19 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
 <!--..................... botón desplegable............................................... -->
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown">
        <span id="user"></span>
-      <span id="sesion"></span>
     </button>
     <script>
         var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
-        var sesion = sessionStorage.getItem("usuario");
         document.getElementById('user').innerHTML=usuario;
-        document.getElementById('sesion').innerHTML=sesion;
         //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
     </script>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a  class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito<span class="badge badge-danger">0</span></a>
           <a class="dropdown-item"><button onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html';">Cerrar Sesión</button></a>
         </div>
       </div>
@@ -83,36 +80,97 @@
 <!-- ......Localización de imágenes ............................ -->
   <dt>Imágenes</dt>
   <dd>
-    <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+<!-- Indicadores _ _ _  -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <!-- imagenes -->
+  <div class="carousel-inner">
+ 
+    <div class="carousel-item active">
+      <img src="img/prod1.jpg" class="d-block w-100" alt="...">
     </div>
-  </dd>
-</dl>
-</div>
+    <div class="carousel-item">
+      <img src="img/prod1_1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/prod1_2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/prod1_3.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/prod1_4.jpg" class="d-block w-100" alt="...">
+    </div>
+<div id="productImagesGallery" style="width: 40%;"></div>
+  </div>
+
+  <!-- controles de cambio -->
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> 
+<a type="button" class="btn btn-light btn-lg btn-block" href="cart.html">Añadir al carrito</a>
+    </div>
+
+<!-- .................................................... -->
+<hr class="my-3">
+<h3>Relacionados</h3>
+<dd>
+  <div class="row text-center text-lg-left pt-2" id="relatedProducts">
+  </div>
+</dd>
 </main>
 <!-- ...................................................................................... -->
 <hr class="my-3">
-<div class="cont" id="comentarios"></div>
-<h3 id="commentsuser"></h3>
+<h3 class="title">Comentarios</h3>
+<br>
 <!-- ........................................................................................ -->
-<style>
-  .cont{
-    width: 100%;
- margin: 10px auto;
- padding: 10px;
- border: solid 2px #f60;
- font: normal 13px arial, helvetica, sans-serif;
-  }
-</style>
+Usuario<input type="text" id="user">  
+Puntaje<select id="score">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select><br>
+<textarea class="cmt" type="text" id="description "></textarea>
+<button type="submit">Enviar</button>
+<div class="container" id="comentarios"></div>
+
+<!-- resultado de comentario -->
+
+<!-- script para comentarios y sus respectivos nombres -->
 <!-- ....................................................................................... -->
 <style>
-  .checked{
-    color: orange;
-  }
+.checked{
+  color: orange;
+}
+.fas.fa-star{
+   color: orange;
+}
+.cnt{
+  width: 100%;
+  height: 100px;
+}
 .des{
    font-size: 20px;
 }
+.title{
+  color: rgb(8, 8, 92);
+}
 </style>
-<!-- ............................................................... -->
+<!--............................................................................................ -->
 <footer class="text-muted">
     <div class="container">
       <p class="float-right">

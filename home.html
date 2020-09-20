@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <!-- botón desgooglearse -->
+<!--..................meta y script referenciados para salir de google................................................................ -->
     <meta name="google-signin-client_id" content="117015505752-ehaoh6k1ng0dd3uitv48v5vbja250va2.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>  
     <title>eMercado - Todo lo que busques está aquí</title>
@@ -21,7 +21,6 @@
   </head>
   <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-     
     <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a> 
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
@@ -29,29 +28,27 @@
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>  
     </div>
-<!-- Botón desplegable -->
-<!-- Lugar del usuario -->
+<!--.......... ...........Botón desplegable .......................................-->
+<!--..................... Lugar del usuario............................ -->
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown">
        <span id="user"></span>
-      <span id="sesion"></span>
     </button>
     <script>
         var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
-        var sesion = sesionStorage.getItem("usuario");
         document.getElementById('user').innerHTML=usuario;
-        document.getElementById('sesion').innerHTML=sesion;
         //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
     </script>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a  class="dropdown-item" href="my-profile.html">Mi Perfil</a>
           <a class="dropdown-item" style="cursor: pointer;">
-     <button onclick="localStorage.clear(); alert('usuario desconectado'); location.href='index.html';">Cerrar sesión</button> 
-    <a href="index.html" onclick="signOut(); localStorage.clear();">sing out</a></div>
+<!-- ...................Botón de cerrar sesión.......................................... -->
+ <a class="dropdown-item"><button onclick="signOut();">Cerrar Sesión</button></a> 
       </div>
       </div>
     </nav>
-
+    <!--localStorage.clear(); alert('Usuario desconectado'); location.href='index.html';"-->
+<!-- ...................................................................................... -->
     <main role="main">
       <section class="jumbotron text-center">
         <div class="m-5">
