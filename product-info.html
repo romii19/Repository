@@ -80,16 +80,17 @@
 <!-- ......Localización de imágenes ............................ -->
   <dt>Imágenes</dt>
   <dd>
+<br><br>
 <!-- Indicadores _ _ _  -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-  </ol>
-  <!-- imagenes -->
+<ol class="carousel-indicators"> 
+   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> 
+   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+   <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+   <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+ </ol>
+   <!--imagenes -->
   <div class="carousel-inner">
  
     <div class="carousel-item active">
@@ -107,9 +108,8 @@
     <div class="carousel-item">
       <img src="img/prod1_4.jpg" class="d-block w-100" alt="...">
     </div>
-<div id="productImagesGallery" style="width: 40%;"></div>
-  </div>
-
+  <div id="productImagesGallery" style="width: 40%;"></div>
+</div>
   <!-- controles de cambio -->
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -122,13 +122,11 @@
 </div> 
 <a type="button" class="btn btn-light btn-lg btn-block" href="cart.html">Añadir al carrito</a>
     </div>
-
 <!-- .................................................... -->
 <hr class="my-3">
 <h3>Relacionados</h3>
 <dd>
-  <div class="row text-center text-lg-left pt-2" id="relatedProducts">
-  </div>
+  <div class="rel" id="relatedProducts"></div>
 </dd>
 </main>
 <!-- ...................................................................................... -->
@@ -136,21 +134,18 @@
 <h3 class="title">Comentarios</h3>
 <br>
 <!-- ........................................................................................ -->
-Usuario<input type="text" id="user">  
+Usuario<input type="text" id="user">
 Puntaje<select id="score">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select><br>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select><br>
 <textarea class="cmt" type="text" id="description "></textarea>
-<button type="submit">Enviar</button>
-<div class="container" id="comentarios"></div>
-
-<!-- resultado de comentario -->
-
-<!-- script para comentarios y sus respectivos nombres -->
+ <!-- Comentarios --> 
+<button type="submit">Enviar</button><br><br>
+<div class="container" id="comentarios"><div> 
 <!-- ....................................................................................... -->
 <style>
 .checked{
