@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             showImagesGallery(category.images);
 });
 });   
+// Muestro los productos relacionados
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){ 
@@ -77,7 +78,7 @@ for(k = 3; k < relatedProducts.length; k++)
 }); 
 });   
    
-
+// Muestro los comentarios
             document.addEventListener("DOMContentLoaded", function(e){
                 getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
                     if (resultObj.status === "ok"){ 
@@ -105,6 +106,37 @@ for(k = 3; k < relatedProducts.length; k++)
             }
     }); 
 });   
+// Para agregar comentarios
+var lista=[];
+        function guardar(){
+            var personas={}; //defino el objeto
+            var nom=document.getElementById('nombre').value;//obtengo los valores
+            var score=document.getElementById('score').value;
+            var desc=document.getElementById('desc').value;
 
+            personas.nombre=nom;//guardo los valores
+            personas.score=score;
+            personas.desc=desc;
+            
+            lista.push(personas); //agrego los valores al final de la colección
+            mostrar(lista);//llamo a la funcion para mostrar los datos
+        }
 
-// });
+        function mostrar(lista){
+
+        var list = ""; //escribe el encabezado
+        for (i=0; i<lista.length; i++){
+
+            list+=`<div> 
+               
+            <hr><p><img src="img/bxs-user.svg" alt="" class="icon">
+            <b>` + lista[i].nombre + `</b></p>
+            <small><p class="des">`+ lista[i].desc +`</p></small>
+            <p>Puntaje:` + lista[i].score  + `</p>
+            <button id="borrar" class ="btn btn-danger" onclick="clear(); location.reload();">Eliminar comentario
+            </button>
+            <hr>
+            </div>`;
+        }
+        document.getElementById('lista').innerHTML=list;
+        }

@@ -8,7 +8,12 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
+    <style>
+      .bg-fondo{
+        background: rgb(106,27,34);
+background: linear-gradient(90deg, rgba(106,27,34,0.9457142720369398) 2%, rgba(135,12,30,0.8504761767988446) 30%, rgba(145,40,49,0.9233053084515056) 65%, rgba(223,22,95,0.9092997062106092) 98%);
+      }
+    </style>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -30,31 +35,32 @@
     <link href="css/dropzone.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-       <!--..................... botón desplegable............................................... -->
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown">
-       <span id="user"></span>
-    </button>
-    <script>
-        var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
-        document.getElementById('user').innerHTML=usuario;
-        //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
-    </script>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a  class="dropdown-item" href="my-profile.html">Mi Perfil</a>
-          <a class="dropdown-item" href="cart.html">Mi carrito<span class="badge badge-danger">0</span></a>
-          <a class="dropdown-item"><button onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html';">Cerrar Sesión</button></a>
+    <!-- --------------------- -->
+    <nav class="site-header sticky-top bg-fondo ">
+      <div class="navbar container bg-fondo">
+        <a class="navbar-brand" href="home.html">Inicio</a>
+        <a class="navbar-brand" href="categories.html">Categorías</a>
+        <a class="navbar-brand" href="products.html">Productos</a>
+        <a class="navbar-brand" href="sell.html">Vender</a>
+  <!--..................... botón desplegable............................................... -->
+        <div class="nav-item dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown">
+         <span id="user"></span>
+      </button>
+      <script>
+          var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
+          document.getElementById('user').innerHTML=usuario;
+          //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
+      </script>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a  class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito<span class="badge badge-danger">0</span></a>
+            <a class="dropdown-item"><button onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html';">Cerrar Sesión</button></a>
+          </div>
         </div>
-      </div>
-      </div>
-    </nav>
-  
+        </div>
+      </nav>
+<!-- ------------------------------------------------ -->
       <div class="container">
         <div class="text-center p-4">
           <h2>Vender</h2>

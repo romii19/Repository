@@ -31,26 +31,134 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <style>
+    .bg-fondo{
+      background: rgb(106,27,34);
+background: linear-gradient(90deg, rgba(106,27,34,0.9457142720369398) 2%, rgba(135,12,30,0.8504761767988446) 30%, rgba(145,40,49,0.9233053084515056) 65%, rgba(223,22,95,0.9092997062106092) 98%);
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-    </div>
-  </nav>
+  <!-- ---------------------------------------------------------------------------------- -->
+  <nav class="site-header sticky-top bg-fondo">
+    <div class="navbar container bg-fondo">
+      <a class="navbar-brand" href="home.html">Inicio</a>
+      <a class="navbar-brand" href="categories.html">Categorías</a>
+      <a class="navbar-brand" href="products.html">Productos</a>
+      <a class="navbar-brand" href="sell.html">Vender</a>
+<!--..................... botón desplegable............................................... -->
+      <div class="nav-item dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="user" data-toggle="dropdown">
+       <span id="user"></span>
+    </button>
+    <script>
+        var usuario = localStorage.getItem("usuario"); //getItem Obtiene el dato de la posición "usuario"
+        document.getElementById('user').innerHTML=usuario;
+        //Nótese que si cerramos el navegador y volvemos a abrir, el dato sigue almacenado
+    </script>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a  class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito<span class="badge badge-danger"></span></a>
+          <a class="dropdown-item"><button onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html';">Cerrar Sesión</button></a>
+        </div>
+      </div>
+      </div>
+    </nav>
+  <!-- ----------------------------------------------------------- -->
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
+    <div class="row" role="alert" style="position: relative; width:auto; top: 0;">
+      <div class="container">
+        <div class="container">
+
+          <div class="signup-form-container">
+          
+              
+               <form role="form"  autocomplete="off" class="form">
+               
+               <div class="form-header">
+                <h3 class="form-title"><img src="img/bxs-user.svg" alt="" class="icon">
+                  Registrate</h3>             
+               </div>
+                <div class="row">
+                  
+                  <div class="form-group col-lg-6">
+                       <div class="input-group">
+                       <input id="nombre" type="text" class="form-control" placeholder="Nombre">
+                       </div>  
+                  </div>
+                           
+                  <div class="form-group col-lg-6">
+                       <div class="input-group">
+                       <input id="ap" class="form-control" placeholder="Apellido">
+                       </div>  
+                  </div>        
+                  </div>     
+
+                    <div class="form-body">
+
+                      <div class="form-group">
+                            <div class="input-group">
+                              <input type="number" id="edad"  class="form-control" placeholder="Edad" required>
+                            </div> 
+                       <br>     
+                          <div class="form-group">
+                         <div class="input-group">
+                         <input id="email" type="text" class="form-control" placeholder="Email">
+                         </div> 
+<br>
+                         <div class="form-group">
+                          <div class="input-group">
+                            <input type="text" id="tel"  class="form-control" placeholder="Teléfono" required>
+                          </div>
+                          
+                          
+
+                        </div>
+
+              <div class="row">
+                        
+                   <div class="form-group col-lg-6">
+                        <div class="input-group">
+                        <input name="password" id="pass" type="password" class="form-control" placeholder="Contraseña">
+                    </div>  
+                   </div>
+                            
+                   <div class="form-group col-lg-6">
+                        <div class="input-group">
+                        <input name="cpassword" type="pass" class="form-control" placeholder="Repetir contraseña">
+                        </div>  
+                   </div>         
+             </div>      
+            </div>
+            <div class="form-footer">
+                 <button type="submit" class="btn btn-info" onclick="guardar()">
+                  Registrar
+                </button>
+            </div>
+              </div>
+              </form>
+             </div>
+   </div> 
+
       <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+      <p class="mb-0"></p>
     </div>
   </div>
+  <!-- ------------------------------------------ -->
+  <style>
+    .form{
+         background-color: rgba(58, 115, 133, 0.486);
+         width: 500px;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+  position: relative;
+    }
+  </style>
+  <!-- ................................................ -->
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

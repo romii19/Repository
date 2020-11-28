@@ -9,7 +9,7 @@ function login(dato, pass){
   }    else{
   localStorage.setItem("usuario", dato.trim()); //setItem almacena el dato en la posición "usuario"
   // localStorage.setItem("password", pass.trim()); // Almaceno la contraseña
-  sessionStorage.setItem("usuario", dato.trim());
+  sessionStorage.setItem("usuario", dato.trim()); 
   alert (" Usuario : " + dato  ); 
   
  

@@ -1,11 +1,12 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
-const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
-const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
-const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
-const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const CATEGORIES_URL = "http://localhost:3000/category";//"https://japdevdep.github.io/ecommerce-api/category/all.json";
+const PUBLISH_PRODUCT_URL = "http://localhost:3000/publish";//"https://japdevdep.github.io/ecommerce-api/product/publish.json";
+const CATEGORY_INFO_URL = "http://localhost:3000/categoria";//"https://japdevdep.github.io/ecommerce-api/category/1234.json";
+const PRODUCTS_URL =  "http://localhost:3000/products";//"https://japdevdep.github.io/ecommerce-api/product/all.json";
+const PRODUCT_INFO_URL = "http://localhost:3000/product";//"https://japdevdep.github.io/ecommerce-api/product/5678.json";
+const PRODUCT_INFO_COMMENTS_URL = "http://localhost:3000/prodcomments";//"https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
+const CART_INFO_URL = "http://localhost:3000/cartinfo";//"https://japdevdep.github.io/ecommerce-api/cart/987.json";
+const CART_BUY_URL = "http://localhost:3000/cartbuy";//"https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 
-function save(dato, pass){  
+/*function save(dato, pass){  
 
     if (dato.trim()==="" || pass.trim()===""){ //Chequea que el dato recibido no esté vacío. 
     //El método trim elimina los espacios en blanco al inicio y al final del mismo.
@@ -64,4 +65,4 @@ function save(dato, pass){
     //getItem obtiene el dato almacenado en la posición "usuario"
    
     }
-}
+}*/
